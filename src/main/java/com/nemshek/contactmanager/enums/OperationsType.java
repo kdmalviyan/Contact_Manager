@@ -4,9 +4,9 @@
 package com.nemshek.contactmanager.enums;
 
 public enum OperationsType {
-	INSERT(1, "Insert contact"), DELETE(2, "Delete contact"), UPDATE(3,
-			"Update contact"), SELECT(4, "Select contact"), SELECT_ALL(5,
-			"Select all contacts"), EXIT(6, "close application");
+	INSERT(1, "Add Contact"), DELETE(2, "Delete Contact"), UPDATE(3,
+			"Edit Contact"), SELECT(4, "Search Contacts"), SELECT_ALL(5,
+			"Show Contacts"), EXIT(6, "Exit");
 
 	private int key;
 	private String displayValue;
