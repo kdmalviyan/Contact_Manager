@@ -39,18 +39,23 @@ public class ContactManager {
 					System.out.println(AppConstants.TASK_DONE
 							+ OperationsType.values()[taskNum - 1]
 									.getDisplayValue() + AppConstants.IS_DONE);
-					String continueApp = scanner.nextLine();
-					if (StringUtils.isNotBlank(continueApp)) {
-						if (continueApp
-								.equalsIgnoreCase(AppConstants.CONTINUE_YES)) {
-							flag = true;
-						} else if (continueApp
-								.equalsIgnoreCase(AppConstants.CONTINUE_NO)) {
-							flag = false;
-						} else {
-							flag = true;
-							System.out
-									.println(AppConstants.WRONG_OPTION_CHOOSEN);
+
+					System.out.println(AppConstants.WANT_TO_CONTINUE_MESSAGE);
+					while (true) {
+						String continueApp = scanner.nextLine();
+						if (StringUtils.isNotBlank(continueApp)) {
+							if (continueApp
+									.equalsIgnoreCase(AppConstants.CONTINUE_YES)) {
+								flag = true;
+								break;
+							} else if (continueApp
+									.equalsIgnoreCase(AppConstants.CONTINUE_NO)) {
+								flag = false;
+								break;
+							} else {
+								System.out.println(AppConstants.WRONG_OPTION_CHOOSEN + "\n"+ AppConstants.WANT_TO_CONTINUE_MESSAGE);
+								continue;
+							}
 						}
 					}
 
@@ -87,7 +92,7 @@ public class ContactManager {
 			Contact updateContact = ContactHelper.getContactToUpdate(scanner);
 			;
 			contactDao.updateContact(updateContact);
-			flagValue = true;
+			flagValue = false;
 			break;
 		case 4:
 			String selectCriteria = ContactHelper.getCriteriaToselect(scanner);

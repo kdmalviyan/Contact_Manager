@@ -28,4 +28,5 @@ public class AppConstants {
 	public static final String ASK_CRITERIA_DETAILS_TO_DELETE = "Please choose how you want to delete contact(Note: except by email, multiple contact can be deleted):";
 	public static final String ASK_CONTACT_DETAILS_TO_UPDATE = "Please provide contact details to update(Note: email will be used to search the recor to update):";
 	public static final String ASK_CRITERIA_DETAILS_TO_SELECT = "Please choose how you want to search contact";
+	public static final String WANT_TO_CONTINUE_MESSAGE = "You want to continue?(Y/N)";
 }
